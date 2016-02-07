@@ -11,3 +11,4 @@
 #### Updates
 ##### 07/02/2016
 - Finished javascripting
+- Finished scope-chains-closures
