@@ -1,12 +1,7 @@
-var filterFunction = require('./filter')
-var dir = process.argv[2]
-var filterStr = process.argv[3]
+var http = require('http')
 
-filterFunction(dir, filterStr, function (err, list) {
-  if (err)
-    return console.error('There was an error:', err)
-
-  list.forEach(function (file) {
-    console.log(file)
-  })
+http.get(process.argv[2], function (response) {
+  response.setEncoding('utf8')
+  response.on('data', console.log)
+  response.on('error', console.error)
 })
